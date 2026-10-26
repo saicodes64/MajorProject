@@ -1,0 +1,23 @@
+# PostgreSQL + TimescaleDB for the IIoT platform.
+# Start with:  docker compose up -d
+services:
+  timescaledb:
+    image: timescale/timescaledb:2.17.2-pg16
+    container_name: iiot_timescaledb
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-iiot}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-iiot_password}
+      POSTGRES_DB: ${POSTGRES_DB:-iiot_platform}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-iiot} -d ${POSTGRES_DB:-iiot_platform}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

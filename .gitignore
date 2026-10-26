@@ -1,0 +1,30 @@
+# --- Dataset (must never be committed) ---
+data/raw/
+data/processed/
+*.csv
+*.zip
+*.pdf
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.Python
+
+# --- Environment / secrets ---
+.env
+*.env
+!.env.example
+
+# --- Docker / DB volumes ---
+pgdata/
+*.sqlite3
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/
+*.log

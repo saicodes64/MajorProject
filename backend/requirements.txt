@@ -1,0 +1,15 @@
+# Core data handling
+pandas>=2.2
+numpy>=1.26
+
+# Database
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+
+# Configuration
+python-dotenv>=1.0
+
+# API layer
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
