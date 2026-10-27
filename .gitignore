@@ -1,9 +1,13 @@
-# --- Dataset (must never be committed) ---
-data/raw/
+# --- Dataset ---
+# Ignore the raw/processed folders by default, but commit the source MetroPT-3
+# dataset files (stored via Git LFS). Negations must come last to win.
+data/raw/*
 data/processed/
 *.csv
 *.zip
 *.pdf
+!data/raw/MetroPT3(AirCompressor).csv
+!data/raw/Data Description_Metro.pdf
 
 # --- Python ---
 __pycache__/
