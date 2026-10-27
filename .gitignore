@@ -2,7 +2,6 @@
 # Ignore the raw/processed folders by default, but commit the source MetroPT-3
 # dataset files (stored via Git LFS). Negations must come last to win.
 data/raw/*
-data/processed/
 *.csv
 *.zip
 *.pdf
